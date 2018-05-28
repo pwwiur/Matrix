@@ -1,5 +1,5 @@
 # Matrix
-Matrix is a dual-dimensional data structure with a easy to use and smart implementation to use it with array operators and debug tools like dumping objects.
+Matrix is a dual-dimensional data structure with a easy to use and smart implementation with array operators and debug tools like dumping objects.
 
 The idea comes from returning dual-dimensional arrays from functions that is a boring proccess. Matrix also has key, value feature to prevent using maps for some needings. This data structure is more likely to database tables and it can be used to storing data on ram.
 
