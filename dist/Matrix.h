@@ -35,10 +35,12 @@ template<class T> class Matrix{
         Matrix(int x, int y);
         Proxy operator[](int x);
         T& operator() (T key, int n = 1);
-        void set(int x, int y, T value);
+        /*void set(int x, int y, T value);
         void cset(int x, int y, char value);
-        T get(int x, int y);
+        T get(int x, int y);*/
 };
+
+
 
 
 
@@ -70,7 +72,22 @@ template<class T> T& Matrix<T>::operator() (T key, int n) {
     }
     error(0, key);
 }
+/*
+template<class T> void Matrix<T>::set(int x, int y, T value){
+    if(checkXY(x, y))
+        arr[y + width * x] = value;
+}
 
+template<class T> void Matrix<T>::cset(int x, int y, char value){
+    if(checkXY(x, y))
+        arr[y + width * x] += value;
+}
+
+template<class T> T Matrix<T>::get(int x, int y){
+    if(checkXY(x, y))
+        return arr[y + width * x];
+}
+*/
 template<class T> bool Matrix<T>::checkXY(int x, int y){
     return x >= 0 && x < width && y >= 0 && y < height;
 }
@@ -79,7 +96,7 @@ template<class T> bool Matrix<T>::checkXY(int x, int y){
 template<class T> Matrix<T>::Proxy::Proxy(T* _arr, int width, int x) : _arr(_arr), width(width), x(x){}
 
 template<class T> T& Matrix<T>::Proxy::operator[](short int y){
-    return _arr[x+width*y];
+    return _arr[y+width*x];
 }
 
 template<class T> typename Matrix<T>::Proxy Matrix<T>::operator[](int x){
