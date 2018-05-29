@@ -9,21 +9,21 @@ int main(){
 
     // setting columns
     mat[0][0] = "Name";
-    mat[1][0] = "LastName";
-    mat[2][0] = "Email";
+    mat[0][1] = "LastName";
+    mat[0][2] = "Email";
 
     // setting rows
-    mat[0][1] = "Amir";
+    mat[1][0] = "Amir";
     mat[1][1] = "Forstai";
-    mat[2][1] = "pwwiur@yahoo.com";
+    mat[1][2] = "pwwiur@yahoo.com";
 
-    mat[0][2] = "Ali";
-    mat[1][2] = "Hajizadeh";
+    mat[2][0] = "Ali";
+    mat[2][1] = "Hajizadeh";
     mat[2][2] = "example@mail.com";
 
-    mat[0][3] = "Hossein";
-    mat[1][3] = "Kazemi";
-    mat[2][3] = "example@mail.com";
+    mat[3][0] = "Hossein";
+    mat[3][1] = "Kazemi";
+    mat[3][2] = "example@mail.com";
 
     // array dump
     mat.dump.array();
