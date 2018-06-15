@@ -9,7 +9,6 @@ using namespace std;
 /*
     Todo:
     - Complete error exceptions
-    - Adding string indexes by brackets to associeted arrays
     - Importing global functions to class object
     - Optimizations of global functions and class members
     - Data type support tests and improvements
@@ -24,6 +23,18 @@ template<class T> class Matrix{
             public:
                 Proxy(T* _arr, int width, int x) : _arr(_arr), width(width), x(x){}
                 T& operator[](int y){
+                    return _arr[y + width * x];
+                }
+                T& operator[](const char* key){
+                    int y = -1;
+                    for(int i = 0; i < width; i++){
+                        if(_arr[i] == key){
+                            y = i;
+                        }
+                    }
+                    if(y == -1){
+                        throw "Error: No result fount by " + string(key) + " key in the array.";
+                    }
                     return _arr[y + width * x];
                 }
             private:
@@ -145,13 +156,6 @@ template<class T> class Matrix{
         Proxy operator[] (int x){
             return Proxy(arr, width, x);
         }
-        T& operator() (T key, int n = 1){
-            for(int i = 0; i < width; i++){
-                if(arr[i] == key)
-                    return arr[i + width * n];
-            }
-            throw "Error: The key '" + key + "' was not fount in the matrix.";
-        }
         bool operator== (Matrix m){
             if(this->width == m.width && this->height == m.height){
                 for(int i = 0; i < this->width; i++){
@@ -216,7 +220,6 @@ template<class T> class Matrix{
             }
             return result;
         }
-
         Matrix operator+ (Matrix m){
             Matrix result(this->width, this->height);
             for(int i = 0; i < this->width; i++){
