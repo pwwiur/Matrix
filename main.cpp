@@ -5,7 +5,7 @@ using namespace std;
 
 int main(){
     // matrix 3x4 initialization for strings
-    Matrix<string> mat(3, 4);
+    Matrix<string> mat(4, 3);
 
     // setting columns
     mat[0][0] = "Name";
@@ -35,10 +35,10 @@ int main(){
     mat.dump.matrix();
 
     // getting information of Name in the first row
-    cout << "Name: " << mat("Name") << endl;
+    cout << "Name: " << mat[1]["Name"] << endl;
 
     // getting information of Name in the second row
-    cout << "Name: " << mat("Name", 2) << endl;
+    cout << "Name: " << mat[2]["Name"] << endl;
 
 
     return 0;
