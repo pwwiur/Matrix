@@ -13,6 +13,8 @@ using namespace std;
     - Importing global functions to class object
     - Optimizations of global functions and class members
     - Data type support tests and improvements
+    - Adding array initialization for = operator
+    - Adding search operator that returns array of indexes
 */
 
 template<class T> class Matrix{
@@ -345,6 +347,16 @@ template<class T> double Minor(Matrix<T> mat, int x, int y){
         }
     }
     return det(submat);
+}
+template<class T> Matrix<T> Minor(Matrix<T> mat){
+    int n = mat.width;
+    Matrix<T> submat(n, n);
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < n; j++){
+            submat[i][j] = Minor(mat, i, j);
+        }
+    }
+    return submat;
 }
 
 template<class T> double cofactor(Matrix<T> mat, int x, int y){
