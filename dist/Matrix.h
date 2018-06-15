@@ -6,6 +6,15 @@
 
 using namespace std;
 
+/*
+    Todo:
+    - Complete error exceptions
+    - Adding string indexes by brackets to associeted arrays
+    - Importing global functions to class object
+    - Optimizations of global functions and class members
+    - Data type support tests and improvements
+*/
+
 template<class T> class Matrix{
     private:
         T* arr;
@@ -196,6 +205,16 @@ template<class T> class Matrix{
             this->height = m.height;
             return *this;
         }
+        template<class S> Matrix operator+ (S x){
+            Matrix result(this->width, this->height);
+            for(int i = 0; i < this->width; i++){
+                for(int j = 0; j < this->height; j++){
+                    result[i][j] = (*this)[i][j] + x;
+                }
+            }
+            return result;
+        }
+
         Matrix operator+ (Matrix m){
             Matrix result(this->width, this->height);
             for(int i = 0; i < this->width; i++){
@@ -341,12 +360,4 @@ template<class T> Matrix<T> cofactor(Matrix<T> mat){
     }
     return submat;
 }
-/*
-    Todo:
-    - Complete error exceptions
-    - Adding string indexes by brackets to associeted arrays
-    - Importing global functions to class object
-    - Optimizations of global functions and class members
-    - Data type support tests and improvements
-*/
 #endif // Matrix_H
