@@ -1,10 +1,10 @@
 # Matrix
-Matrix is a dual-dimensional data structure with a easy to use and smart implementation with array operators and debug tools like dumping objects.
+Matrix is a two-dimensional data structure with an easy to use and smart implementation with array operators and debug tools like dumping objects and supporting mathematics operators.
 
-The idea comes from returning dual-dimensional arrays from functions that is a boring proccess. Matrix also has key, value feature to prevent using maps for some needings. This data structure is more likely to database tables and it can be used to storing data on ram.
+The idea comes from returning two-dimensional arrays from functions that is a boring proccess. Matrix also supports associative arrays to prevent using extra libraries like std::map for some needings. This data structure can be used to storing data on the ram table based data structure and table operation supports. And more huge feature can be found in the documention.
 
 ## Installation and configure
-Installation and configure is pretty easy just clone header file located in `dist/Matrix.h` and add it to your project like:
+Installation and configure is pretty easy, just clone header file located in `dist/Matrix.h` and add it to your project like:
 
 `#include "matrix.h"`
 
