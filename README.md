@@ -8,5 +8,18 @@ Installation and configure is pretty easy, just clone header file located in `di
 
 `#include "matrix.h"`
 
+## Getting started
+Usage of Matrix is very easy and more similar to c++ arrays.
+
+```c++
+Matrix<int> mat(3, 2);
+mat[0][0] = 2;
+mat[0][1] = 23;
+mat[1][0] = 0;
+mat[1][1] = -6;
+mat[2][0] = 10;
+mat[2][1] = 67;
+```
+
 ## Documention
 You can read the documention [here](https://www.amirforsati.ir/doc/11).
