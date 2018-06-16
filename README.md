@@ -19,6 +19,8 @@ mat[1][0] = 0;
 mat[1][1] = -6;
 mat[2][0] = 10;
 mat[2][1] = 67;
+
+cout << "Matrix[0][1] is " << mat[0][1];
 ```
 
 ## Documention
