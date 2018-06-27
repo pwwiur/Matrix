@@ -316,7 +316,7 @@ template<class T, int R = 0, int C = 0> class Matrix{
             arr[y + width * x] += value;
         }
 
-        T get(int x, int y){
+        T& get(int x, int y){
             return arr[y + width * x];
         }
 };
