@@ -16,7 +16,7 @@ using namespace std;
     - Adding search operator that returns array of indexes
 */
 
-template<class T> class Matrix{
+template<class T, int R = 0, int C = 0> class Matrix{
     private:
         T* arr;
         class Proxy {
@@ -148,11 +148,23 @@ template<class T> class Matrix{
 
     public:
         int width, height;
+        static const int isMatrix = 10;
         Dump dump = Dump(this);
-
-        Matrix(int rows, int columns): width(columns), height(rows){
-            arr = new T[rows * columns];
+        Matrix(int rows = 0, int columns = 0){
+            if(rows > 0 && columns > 0){
+                height = rows;
+                width = columns;
+            }
+            else if(R > 0 && C > 0){
+                height = R;
+                width = C;
+            }
+            else{
+                throw "Matrix initialization should have height and width arguments and must be greater than zero.";
+            }
+            arr = new T[height * width];
         }
+
         Proxy operator[] (int x){
             return Proxy(arr, width, x);
         }
@@ -375,4 +387,5 @@ template<class T> Matrix<T> cofactor(Matrix<T> mat){
     }
     return submat;
 }
+
 #endif // Matrix_H
