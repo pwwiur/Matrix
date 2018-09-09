@@ -224,18 +224,18 @@ template<class T, int R = 0, int C = 0> class Matrix{
             return *this;
         }
         template<class S> Matrix operator+ (S x){
-            Matrix result(this->width, this->height);
-            for(int i = 0; i < this->width; i++){
-                for(int j = 0; j < this->height; j++){
+            Matrix result(this->height, this->width);
+            for(int i = 0; i < this->height; i++){
+                for(int j = 0; j < this->width; j++){
                     result[i][j] = (*this)[i][j] + x;
                 }
             }
             return result;
         }
         Matrix operator+ (Matrix m){
-            Matrix result(this->width, this->height);
-            for(int i = 0; i < this->width; i++){
-                for(int j = 0; j < this->height; j++){
+            Matrix result(this->height, this->width);
+            for(int i = 0; i < this->height; i++){
+                for(int j = 0; j < this->width; j++){
                     result[i][j] = (*this)[i][j] + m[i][j];
                 }
             }
