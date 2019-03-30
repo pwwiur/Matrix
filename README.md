@@ -6,7 +6,7 @@ The idea comes from returning two-dimensional arrays from functions that is a bo
 ## Installation and configure
 Installation and configure is pretty easy, just clone header file located in `dist/Matrix.h` and add it to your project like:
 
-`#include "matrix.h"`
+`#include "Matrix.h"`
 
 ## Getting started
 Usage of Matrix is very easy and more similar to c++ arrays.
